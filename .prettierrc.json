@@ -1,0 +1,13 @@
+{
+  "semi": true,
+  "printWith": 80,
+  "printWidth": 100,
+  "singleQuote": true,
+  "vueIndentScriptAndStyle": true,
+  "tabWidth": 2,
+  "quoteProps": "consistent",
+  "Quotes": true,
+  "bracketSpacing": true,
+  "proseWrap": "never"
+}
+
