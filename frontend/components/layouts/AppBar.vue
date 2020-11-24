@@ -48,15 +48,26 @@
     query = '';
     cart = 5;
 
+    mounted() {
+      const query = this.$route.query.query;
+
+      if (query) {
+        // @ts-ignore
+        this.query = query;
+      }
+    }
+
     search() {
       const query = this.$route.query.query;
 
-      if ((!this.query || this.query.length < 3)) {
+      if (!this.query || this.query.length < 3) {
         if (!parseInt(this.query)) {
           this.$router.push('/');
+          return;
         }
       }
-      else if(this.query !== query) {
+
+      if (this.query !== query) {
         this.$router.replace(`/catalogo/search?query=${this.query}`);
       }
     }

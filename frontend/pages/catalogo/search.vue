@@ -1,5 +1,8 @@
 <template>
   <v-container>
+    <v-alert v-if="error" class="text-center" text outlined color="red" icon="mdi-alert">
+      {{ error }}
+    </v-alert>
     <ProductsListing :products="products" />
   </v-container>
 </template>
@@ -16,19 +19,36 @@
   export default class Search extends Vue {
     products = [];
 
-    @Watch("$route.query.query", { immediate: true })
+    error = '';
+
+    @Watch('$route.query.query', { immediate: true })
     async fetchProducts() {
       const query = this.$route.query.query;
 
       if (parseInt(query)) {
-        this.$axios.$get(`/products/${query}`).then((response) => {
-          this.products = [response];
+        console.log('by id');
+        this.$axios
+          .$get(`/products/${query}`)
+          .then((response) => {
+            this.products = [response];
+            this.error = '';
+          })
+          .catch((err) => {
+            const query = this.$route.query.query;
+            this.error = `No se pudo encontrar el producto: "${query}"`;
+          });
+      } else {
+        this.$axios.$get(`/products/search?query=${query}`).then((response) => {
+          this.products = response;
+
+          this.error = '';
+
+          if (response.length === 0) {
+            const query = this.$route.query.query;
+            this.error = `No se han encontrado productos para la busqueda: "${query}"`;
+          }
         });
       }
-
-      this.$axios.$get(`/products/search?query=${query}`).then((response) => {
-        this.products = response;
-      });
     }
   }
 </script>
