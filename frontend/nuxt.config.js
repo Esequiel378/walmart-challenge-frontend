@@ -1,11 +1,13 @@
 import colors from 'vuetify/es5/util/colors';
 
-require('dotenv').config()
+require('dotenv').config();
 
 export default {
+  // Nuxt target (https://nuxtjs.org/api/configuration-target)
+  target: 'static',
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: process.env.PROJECT_NAME,
+    titleTemplate: 'Lider',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

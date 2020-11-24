@@ -6,13 +6,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: local
-    image: local_wallmart_challenge_frontend
-    env_file: .env
-    volumes:
-      - ./frontend:/app
+      target: production
+    image: production_wallmart_challenge_frontend
     container_name: frontend_container
-    command: npm run dev
     ports:
       - "3000:3000"
 
