@@ -13,11 +13,13 @@
 
         <v-col md="6" align-self="center">
           <v-text-field
+            v-on:keyup.enter="search"
             solo
             rounded
             label="¿Qué estás buscando?"
             prepend-inner-icon="mdi-magnify"
             hide-details
+            v-model="query"
           ></v-text-field>
         </v-col>
 
@@ -38,12 +40,23 @@
   </v-app-bar>
 </template>
 
-<script>
-  export default {
-    data() {
-      return {
-        cart: 5,
-      };
-    },
-  };
+<script lang="ts">
+  import { Component, Vue } from 'nuxt-property-decorator';
+
+  @Component({})
+  export default class AppBar extends Vue {
+    query = '';
+    cart = 5;
+
+    search() {
+      const query = this.$route.query.query;
+
+      if (!this.query || this.query.length < 3) {
+        this.$router.push('/');
+      }
+      else if(this.query !== query) {
+        this.$router.replace(`/catalogo/search?query=${this.query}`);
+      }
+    }
+  }
 </script>
