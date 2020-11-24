@@ -1,10 +1,11 @@
 import colors from 'vuetify/es5/util/colors';
 
+require('dotenv').config()
+
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - frontend',
-    title: 'frontend',
+    titleTemplate: process.env.PROJECT_NAME,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

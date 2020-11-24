@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: local_wallmart_challenge_frontend
+    env_file: .env
+    volumes:
+      - ./frontend:/app
+    container_name: frontend_container
+    command: npm run dev
+    ports:
+      - "3000:3000"
+

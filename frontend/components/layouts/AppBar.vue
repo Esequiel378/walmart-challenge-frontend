@@ -51,8 +51,10 @@
     search() {
       const query = this.$route.query.query;
 
-      if (!this.query || this.query.length < 3) {
-        this.$router.push('/');
+      if ((!this.query || this.query.length < 3)) {
+        if (!parseInt(this.query)) {
+          this.$router.push('/');
+        }
       }
       else if(this.query !== query) {
         this.$router.replace(`/catalogo/search?query=${this.query}`);

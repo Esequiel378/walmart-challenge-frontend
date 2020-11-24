@@ -20,6 +20,12 @@
     async fetchProducts() {
       const query = this.$route.query.query;
 
+      if (parseInt(query)) {
+        this.$axios.$get(`/products/${query}`).then((response) => {
+          this.products = [response];
+        });
+      }
+
       this.$axios.$get(`/products/search?query=${query}`).then((response) => {
         this.products = response;
       });
