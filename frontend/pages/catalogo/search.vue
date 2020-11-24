@@ -26,7 +26,6 @@
       const query = this.$route.query.query;
 
       if (parseInt(query)) {
-        console.log('by id');
         this.$axios
           .$get(`/products/${query}`)
           .then((response) => {
