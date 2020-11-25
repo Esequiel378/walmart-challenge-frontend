@@ -60,11 +60,9 @@
     search() {
       const query = this.$route.query.query;
 
-      if (!this.query || this.query.length < 3) {
-        if (!parseInt(this.query)) {
-          this.$router.push('/');
-          return;
-        }
+      // @ts-ignore
+      if ((!this.query || this.query.length < 3) && isNaN(this.query)) {
+        return;
       }
 
       if (this.query !== query) {
