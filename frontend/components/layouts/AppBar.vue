@@ -3,12 +3,14 @@
     <v-container fluid>
       <v-row>
         <v-col md="3" align-self="center">
-          <v-img
-            src="https://www.lider.cl/catalogo/images/lider-logo.svg"
-            max-height="100"
-            max-width="120"
-            contain
-          ></v-img>
+          <NuxtLink to="/">
+            <v-img
+              src="https://www.lider.cl/catalogo/images/lider-logo.svg"
+              max-height="100"
+              max-width="120"
+              contain
+            ></v-img>
+          </NuxtLink>
         </v-col>
 
         <v-col md="6" align-self="center">
