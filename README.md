@@ -34,7 +34,7 @@ docker-compose -f local.yml build
 docker-compose -f local.yml up
 ```
 
-Now you can visit http://localhost:5000/
+Now you can visit http://localhost:3000/
 
 ## Testing
 
