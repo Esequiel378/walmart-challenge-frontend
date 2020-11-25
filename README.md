@@ -4,7 +4,8 @@
 
 A [Lider](https://www.lider.cl/supermercado/) demo web
 app built with [Docker](https://www.docker.com/why-docker),
-[Nuxt](https://nuxtjs.org/) and [Vuetify](https://vuetifyjs.com/en/)
+[Nuxt](https://nuxtjs.org/), [Vuetify](https://vuetifyjs.com/en/)
+and [Traefik](https://doc.traefik.io/traefik/) as reverse proxy
 
 Live demo [lider.co](http://165.22.3.102)
 
@@ -34,7 +35,20 @@ docker-compose -f local.yml build
 docker-compose -f local.yml up
 ```
 
-Now you can visit http://localhost:3000/
+Now you can visit http://localhost:3000/ to view the App running
+
+Or if your in a production environment run
+
+```shell
+# build api and database images
+docker-compose -f production.yml build
+
+# create api and database containers
+docker-compose -f production.yml up
+```
+
+Now you can visit http://{your-server-domain-or-ip} or
+http://localhost to view the App running
 
 ## Testing
 
