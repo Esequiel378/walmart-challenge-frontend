@@ -48,7 +48,7 @@ docker-compose -f production.yml build
 docker-compose -f production.yml up
 ```
 
-Now you can visit http://{your-server-domain-or-ip} or
+Now you can visit your server ip/domain or
 http://localhost to view the App running
 
 ## Testing
