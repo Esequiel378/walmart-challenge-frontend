@@ -14,6 +14,7 @@ Live demo [lider.co](http://165.22.3.102)
 This project need a .env file in the root directory, with the next variables
 
 ```Python
+# backend api url
 BASE_URL=http://0.0.0.0:5000/api
 ```
 
