@@ -9,6 +9,8 @@ app built with [Docker](https://www.docker.com/why-docker),
 Here you will find the [Backend](https://github.com/Esequiel378/walmart-challenge-backend)
 connection
 
+Live demo [lider.co](http://165.22.3.102)
+
 ## Setup
 
 This project need a .env file in the root directory, with the next variables
