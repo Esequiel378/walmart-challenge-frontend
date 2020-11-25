@@ -6,7 +6,7 @@ A [Lider](https://www.lider.cl/supermercado/) demo web
 app built with [Docker](https://www.docker.com/why-docker),
 [Nuxt](https://nuxtjs.org/) and [Vuetify](https://vuetifyjs.com/en/)
 
-Here you will find the [Backend](https://github.com/Esequiel378/waltmart-challenge-frontend)
+Here you will find the [Backend](https://github.com/Esequiel378/waltmart-challenge-backend)
 connection
 
 ## Deployment
@@ -14,7 +14,7 @@ connection
 First you need to get the source code
 
 ```shell
-git https://github.com/Esequiel378/waltmart-challenge-frontend.git
+git clone https://github.com/Esequiel378/waltmart-challenge-frontend.git
 ```
 
 Since the project use docker-compose, you can deploy locally by running
