@@ -9,6 +9,14 @@ app built with [Docker](https://www.docker.com/why-docker),
 Here you will find the [Backend](https://github.com/Esequiel378/waltmart-challenge-backend)
 connection
 
+## Setup
+
+This project need a .env file in the root directory, with the next variables
+
+```Python
+BASE_URL=http://0.0.0.0/api
+```
+
 ## Deployment
 
 First you need to get the source code
